@@ -1,12 +1,4 @@
 plugins:
-  youtube:
-    enabled: true # Whether this source can be used.
-    allowSearch: true # Whether "ytsearch:" and "ytmsearch:" can be used.
-    allowDirectVideoIds: true # Whether just video IDs can match. If false, only complete URLs will be loaded.
-    allowDirectPlaylistIds: true # Whether just playlist IDs can match. If false, only complete URLs will be loaded.
-    # The clients to use for track loading. See below for a list of valid clients.
-    # Clients are queried in the order they are given (left-to-right)
-    clients: ["MUSIC", "ANDROID", "WEB"]
   lavasrc:
     providers: # Custom providers for track loading. This is the default
       # - "dzisrc:%ISRC%" # Deezer ISRC provider
@@ -20,7 +12,7 @@ plugins:
       deezer: false # Enable Deezer source
       yandexmusic: false # Enable Yandex Music source
       flowerytts: false # Enable Flowery TTS source
-      youtube: false # Enable YouTube search source (https://github.com/topi314/LavaSearch)
+      youtube: true # Enable YouTube search source (https://github.com/topi314/LavaSearch)
     spotify:
       clientId: "your_client_id"
       clientSecret: "your_client_id_secret"
@@ -36,9 +28,6 @@ lavalink:
     - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.2.0"
       repository: "https://maven.lavalink.dev/releases" # this is optional for lavalink v4.0.0-beta.5 or greater
       snapshot: false
-
-    - dependency: "dev.lavalink.youtube:youtube-plugin:1.5.0"
-      snapshot: false # Set to true if you want to use a snapshot ve
   server:
     password: "youshallnotpass"
     channelCount: 16
